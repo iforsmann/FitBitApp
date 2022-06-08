@@ -1,1 +1,1 @@
-java -cp ".;src;lib/*;out/production/FitBitApp" Main
+java -cp ".;src;lib/*;out" Main
