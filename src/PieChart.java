@@ -23,7 +23,7 @@ public class PieChart extends ApplicationFrame{
         JFreeChart chart = ChartFactory.createPieChart(
                 this.title,    // chart title
                 this.data,          // data
-                true,             // include legend
+                false,             // include legend
                 true,
                 false);
         JPanel panel =  new ChartPanel(chart);
