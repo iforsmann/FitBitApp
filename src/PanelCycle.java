@@ -15,6 +15,9 @@ public class PanelCycle extends JPanel {
     JButton left = new JButton("left");
     JButton right = new JButton("right");
 
+    JPanel bLeft;
+    JPanel bRight;
+
     public PanelCycle(){
         super(new BorderLayout());
 
@@ -35,16 +38,24 @@ public class PanelCycle extends JPanel {
             }
         });
 
-        this.add(left, BorderLayout.LINE_START);
-        this.add(right, BorderLayout.LINE_END);
+        bLeft = new JPanel();
+        bLeft.setLayout(new BoxLayout(bLeft, BoxLayout.PAGE_AXIS));
+        bLeft.add(left);
+
+        bRight = new JPanel();
+        bRight.setLayout(new BoxLayout(bRight, BoxLayout.PAGE_AXIS));
+        bRight.add(right, BorderLayout.CENTER);
+
+        this.add(bLeft, BorderLayout.LINE_START);
+        this.add(bRight, BorderLayout.LINE_END);
         this.center = empty;
     }
 
     private void update(JPanel p){
         this.removeAll();
         this.add(p, BorderLayout.CENTER);
-        this.add(left, BorderLayout.LINE_START);
-        this.add(right, BorderLayout.LINE_END);
+        this.add(bLeft, BorderLayout.LINE_START);
+        this.add(bRight, BorderLayout.LINE_END);
         this.center = p;
         this.revalidate();
         this.repaint();

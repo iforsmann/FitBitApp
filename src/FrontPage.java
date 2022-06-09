@@ -33,15 +33,15 @@ public class FrontPage extends JPanel{
         JPanel chart2 = getChart2();
 
         PanelCycle cycle = new PanelCycle();
-        cycle.addPanel(piePanel);
+        //cycle.addPanel(piePanel);
         cycle.addPanel(chart2);
-        cycle.addPanel(piePanel2);
+        //cycle.addPanel(piePanel2);
         cycle.addPanel(chart1);
         cycle.init();
 
         this.add(cycle, BorderLayout.CENTER);
 
-        JButton tables = new JButton("Tables");
+        JButton tables = new JButton("Analyze");
         JButton addData = new JButton("Add Data");
         JPanel bottom = new JPanel(new FlowLayout());
 
